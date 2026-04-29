@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import express from "express";
@@ -38,7 +39,13 @@ app.post("/api/query", async (req, res) => {
   }
 });
 
+const clientDist = path.resolve(__dirname, "../../client/dist");
+if (fs.existsSync(path.join(clientDist, "index.html"))) {
+  app.use(express.static(clientDist));
+}
+
 const port = Number(process.env.PORT) || 8787;
-app.listen(port, () => {
-  console.log(`Wiki agent API: http://localhost:${port}`);
+const host = process.env.HOST ?? "0.0.0.0";
+app.listen(port, host, () => {
+  console.log(`Wiki agent: http://${host}:${port}`);
 });

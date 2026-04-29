@@ -1,6 +1,9 @@
 {
   "name": "wiki-gigachat-telegram-agent",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "workspaces": [
     "server",
     "client"
