@@ -1,0 +1,19 @@
+{
+  "name": "langgraph-examples",
+  "version": "1.0.0",
+  "description": "LangGraph examples for AI agent scenarios",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "run": "node index.js",
+    "query": "node index.js"
+  },
+  "dependencies": {
+    "@langchain/langgraph": "^1.2.0",
+    "@langchain/openai": "^1.2.12",
+    "@langchain/community": "^1.1.22",
+    "@langchain/core": "^1.1.30",
+    "dotenv": "^17.3.1",
+    "zod": "^3.23.8"
+  }
+}
